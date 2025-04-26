@@ -1,26 +1,32 @@
 import './CardProduct.css';
-import { Link } from 'react-router-dom'
-
+import { Link } from 'react-router-dom';
 
 const CardProduct = ({ id, name, price, stock, image }) => {
-    // product.isStar = true
     return (
-        <div className="card-container">
-        <img className="camiseta-producto" src={image} alt={name} />
-        <h2 className="card-header">{name}</h2>
-        <p className="card-text card-price">€{price} <span className="card-text descuento-precio">100€</span></p>
-        <p className="card-text card-price texto-pequeño">Stock: {stock}</p>
-        <Link to={`/product/${id}`}>
-        <button variant="primary" className="Option agregar-carrito">Ver detalle
-        </button>
-        </Link>
+        <div className="product-card">
+            <div className="product-image">
+                <img src={image} alt={name} />
+                <div className="product-overlay">
+                    <Link to={`/product/${id}`} className="view-details-btn">
+                        Ver detalles
+                    </Link>
+                </div>
+            </div>
+            <div className="product-info">
+                <h3 className="product-name">{name}</h3>
+                <div className="product-price">
+                    <span className="current-price">€{price}</span>
+                    <span className="original-price">€100</span>
+                </div>
+                <div className="product-stock">
+                    <span className="stock-label">Disponibles:</span>
+                    <span className="stock-value">{stock}</span>
+                </div>
+            </div>
         </div>
+    );
+};
 
-    )
-}
-
-
-
-export default CardProduct
+export default CardProduct;
 
 

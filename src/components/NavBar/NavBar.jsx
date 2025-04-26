@@ -9,27 +9,36 @@ import { NavLink, Link } from 'react-router-dom'
 // COMPONENTE
 const NavBar = () => {
     return (
-        <>
-            <nav className="navbar navbar-expand-lg bg-body-tertiary ">
-                <div className="container-fluid navbar-prop">
-                    <div className="prop-logo-flex">
-                    <Link to='/'>
-                    <a className="navbar-brand" >JSport</a>
+        <nav className="navbar navbar-expand-lg">
+            <div className="container">
+                <div className="navbar-brand-container">
+                    <Link to='/' className="navbar-brand">
+                        <FutbolSolid />
+                        <span>JSport</span>
                     </Link>
-                    <FutbolSolid />
-                    </div>
-                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div className="navbar-nav">
-                            <NavLink to={`/`} className="nav-link prop-link">Home</NavLink>
-                            <NavLink to={`/camisetas/america`} className={({ isActive}) => isActive ? 'ActiveOption nav-link prop-link' : 'Option nav-link prop-link'}>Camisetas de America</NavLink>
-                            <NavLink to={`/camisetas/europa`} className={({ isActive}) => isActive ? 'ActiveOption nav-link prop-link' : 'Option nav-link prop-link' }>Camisetas de Europa</NavLink>
-                        </div>
+                </div>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <NavLink to='/' className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Home</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink to='/camisetas/america' className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>América</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink to='/camisetas/europa' className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Europa</NavLink>
+                        </li>
+                    </ul>
+                    <div className="navbar-icons">
                         <LogoUser />
                         <CartWidget />
-                </div> 
+                    </div>
                 </div>
-            </nav>
-        </> 
+            </div>
+        </nav>
     )
 }
 

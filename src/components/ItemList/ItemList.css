@@ -2,5 +2,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 15px;
+    gap: 2rem;
+    padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .flex-productos {
+        gap: 1.5rem;
+        padding: 1.5rem 1rem;
+    }
 }

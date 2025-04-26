@@ -1,20 +1,89 @@
-
 /*  ############## NAV ##############*/
-.navbar-prop {
-    background-color: #FFFFFF;
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+.navbar-brand-container {
     display: flex;
-    flex-direction: column;
-    border-bottom: 2px solid #5A716A;
-    margin-bottom: 10px;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    text-decoration: none;
+}
+
+.navbar-brand span {
+    color: #2d3748;
+}
+
+.navbar-nav {
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+.nav-item {
+    margin: 0 0.5rem;
+}
+
+.nav-link {
+    color: #4a5568;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #2d3748;
+    background-color: #f7fafc;
+}
+
+.nav-link.active {
+    color: #2d3748;
+    background-color: #f7fafc;
+    font-weight: 600;
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-futbol {
+    width: 24px;
+    height: 24px;
+}
+
+.icono-cart,
+.logo-user {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.icono-cart:hover,
+.logo-user:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 .navbar-toggler {
-    margin-bottom: 10px;
+    border: none;
+    padding: 0.5rem;
 }
-.prop-link:hover {
-    background-color: rgb(194, 218, 210);
-    color: #FFFFFF;
-    transition-duration: 350ms;
+
+.navbar-toggler:focus {
+    box-shadow: none;
 }
 
 .collapse:not(.show) {
@@ -29,47 +98,23 @@
     margin: 0 15px 10px 15px;
 }
 
-
 .bg-body-tertiary {
     background-color: #FFFFFF;
 }
 
-.logo-futbol {
-    width: 20px;
-}
-
-.prop-logo-flex {
-    display: flex;
-}
-
-.icono-cart {
-    width: 20px;
-    height: 20px;
-    margin: auto;
-    margin-left: 20px;
-}
-.icono-cart:hover {
-    cursor: pointer;
-}
-
-.logo-user {
-    width: 20px;
-    height: 20px;
-    margin-left: 10px;
-}
-.logo-user:hover {
-    cursor: pointer;
-}
-
-.navbar-brand {
-    margin-right: 3.5px;
-    font-weight: 500;
-}
-
 /* MEDIA QUERY */
 @media (max-width: 991px) {
-    .navbar-prop {
+    .navbar-nav {
+        margin: 1rem 0;
+    }
+    
+    .navbar-icons {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+    
+    .nav-item {
+        margin: 0.5rem 0;
         text-align: center;
-        padding-bottom: 10px;
-}
+    }
 }
